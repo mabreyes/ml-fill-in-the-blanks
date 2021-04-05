@@ -1,5 +1,5 @@
 """
-WSGI config for bert_fill_blanks project.
+WSGI config for bert project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bert_fill_blanks.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bert.settings')
 
 application = get_wsgi_application()
