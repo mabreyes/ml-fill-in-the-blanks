@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from pytorch_transformers import BertTokenizer, BertForMaskedLM
 import torch
-import numpy as np
 import nltk
 
 from .forms import GeneratorForm
