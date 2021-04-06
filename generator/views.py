@@ -4,13 +4,21 @@ import torch
 import numpy as np
 import nltk
 
+from .forms import GeneratorForm
 
-def predict():
-    sentence_orig = request.form.get('text')
-    if '____' not in sentence_orig:
-        return sentence_orig
 
-    sentence = sentence_orig.replace('____', 'MASK')
+nltk.download('punkt')
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForMaskedLM.from_pretrained(
+    'bert-base-uncased', output_attentions=True)
+model.eval()
+
+
+def generate_missing(value):
+    if '____' not in value:
+        return value
+
+    sentence = value.replace('____', 'MASK')
     tokens = nltk.word_tokenize(sentence)
     sentences = nltk.sent_tokenize(sentence)
     sentence = " [SEP] ".join(sentences)
@@ -50,7 +58,29 @@ def predict():
     # 	print ()
     predicted_index = torch.argmax(predictions[0, masked_index]).item()
     predicted_token = tokenizer.convert_ids_to_tokens([predicted_index])[0]
-    for f in focus:
-        sentence_orig = sentence_orig.replace(
-            f, '<font color="blue">'+f+'</font>')
-    return sentence_orig.replace('____', '<font color="red"><b><i>'+predicted_token+'</i></b></font>')
+
+    # for f in focus:
+    #     sentence_orig = sentence_orig.replace(
+    #         f, '<font color="blue">'+f+'</font>')
+    return value.replace('____', predicted_token)
+
+
+def base(request):
+    submit_button = request.POST.get("submit")
+
+    form = GeneratorForm(request.POST or None)
+
+    g_val = None
+
+    if form.is_valid():
+        text_area = form.cleaned_data.get("textarea")
+        g_val = generate_missing(text_area)
+
+    
+    context = {
+        'form': form,
+        'generated_value': g_val,
+        'submit_button': submit_button
+    }
+
+    return render(request, 'generator.html', context)
