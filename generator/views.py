@@ -47,15 +47,10 @@ def generate_missing(value):
     b = a.mean(axis=0)
     c = b.reshape(attention[2][0].shape[-1], attention[2][0].shape[-1])
     avg_wgts = c[masked_index]
-    #print (avg_wgts, tokenized_text)
+
     focus = [tokenized_text[i] for i in avg_wgts.argsort().tolist(
     )[::-1] if tokenized_text[i] not in ['[SEP]', '[CLS]', '[MASK]']][:5]
 
-    # for layer in range(12):
-    # 	weights_layer = np.array(attention[0][0][layer][masked_index])
-    # 	print (weights_layer, tokenized_text)
-    # 	print (weights_layer.argsort()[-3:][::-1])
-    # 	print ()
     predicted_index = torch.argmax(predictions[0, masked_index]).item()
     predicted_token = tokenizer.convert_ids_to_tokens([predicted_index])[0]
 
