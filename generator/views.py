@@ -56,7 +56,7 @@ def generate_missing(value):
     for f in focus:
         value = value.replace(
             f, '<font color="blue">'+f+'</font>')
-    return value.replace('____', '<font color="red"><b><i>'+predicted_token+'</i></b></font>')
+    return value.replace('____', '<font color="red"><strong>'+predicted_token+'</strong></font>')
 
 
 def base(request):
@@ -70,7 +70,6 @@ def base(request):
         text_area = form.cleaned_data.get("textarea")
         g_val = generate_missing(text_area)
 
-    
     context = {
         'form': form,
         'generated_value': g_val,
