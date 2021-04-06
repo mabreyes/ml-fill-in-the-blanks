@@ -1,0 +1,1 @@
+web: gunicorn bert.wsgi --log-file -

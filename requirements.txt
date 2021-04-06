@@ -1,0 +1,6 @@
+django
+pytorch_transformers
+torch
+numpy
+nltk
+django-crispy-forms
