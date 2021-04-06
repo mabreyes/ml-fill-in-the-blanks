@@ -59,10 +59,10 @@ def generate_missing(value):
     predicted_index = torch.argmax(predictions[0, masked_index]).item()
     predicted_token = tokenizer.convert_ids_to_tokens([predicted_index])[0]
 
-    # for f in focus:
-    #     sentence_orig = sentence_orig.replace(
-    #         f, '<font color="blue">'+f+'</font>')
-    return value.replace('____', predicted_token)
+    for f in focus:
+        value = value.replace(
+            f, '<font color="blue">'+f+'</font>')
+    return value.replace('____', '<font color="red"><b><i>'+predicted_token+'</i></b></font>')
 
 
 def base(request):

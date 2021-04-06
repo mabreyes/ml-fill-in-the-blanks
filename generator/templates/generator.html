@@ -9,13 +9,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style type="text/css">
+        * {
+          font-family: 'Inter', sans-serif !important;
+        }
+
         .textbuttons {
             text-align: center;
         }
         
         .form-control {
-            font-family: 'roboto';
+            font-family: 'Inter', sans-serif;
             font-size: 22px;
         }
         
@@ -26,7 +32,7 @@
         
         #out {
             text-align: center;
-            font-family: 'roboto';
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
         }
     </style>
@@ -38,20 +44,19 @@
         <p><i>Fill-in-the-</i><b><font color="blue">BERT</font></b> is a fill-in-the-blanks model that is trained to predict the missing word in the sentence. For the purpose of this demo we will be using pre-trained <i>bert-base-uncased</i> as our prediction
             model.
         </p>
-        <p class='info'> <img src="color-coding.png" alt="Color Coding"></p>
         <form action="" method="POST">
             {% csrf_token %}
             <div class="form-group">
                 {{ form.as_p }}
             </div>
             <div class="mt-3 textbuttons">
-                <input type="Submit" class="btn btn-primary" name="submit" value="Submit">Fill in the Blanks</button>
+                <input type="Submit" class="btn btn-primary" name="submit" value="Submit">
             </div>
         </form><br><br>
 
         {% if submit_button == "Submit" %}
         <div class='info'>
-            <p id="output" style='font-family: "roboto";font-size: 23px;'>{{ generated_value }}</p>
+            <p id="output" style='font-family: "roboto";font-size: 23px;'>{{ generated_value | safe }}</p>
         </div><br><br>
         {% endif %}
 
