@@ -27,8 +27,7 @@ SECRET_KEY = 'bs^x%vmb!3uudlocysi1%dpwb#eszdju#15fim(4tkmme2ozum'
 DEBUG = True
 
 ALLOWED_HOSTS = ['143.198.200.194',
-                 'ml-bert.marcreyes.xyz', 
-                 'ml-bert.digitalocean.marcreyes.xyz']
+                 'bert.marcreyes.xyz']
 
 
 # Application definition
@@ -82,7 +81,7 @@ WSGI_APPLICATION = 'bert.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['ML_FITB_NAME'],
+        'NAME': os.environ['ML_FITB_DB'],
         'USER': os.environ['ML_FITB_USER'],
         'PASSWORD': os.environ['ML_FITB_PASSWORD'],
         'HOST': 'localhost',
