@@ -1,5 +1,5 @@
 # ML Fill-in-the-Blanks
-![Google BERT Representative Image](https://cdn-images-1.medium.com/max/1000/1*-oQKmzvHrzqeSQEnM9f_kQ.png)
+![Google BERT Representative Image](demo.gif)
 
 ML Fill-in-the-Blanks is a natural language processing (NLP) model that is trained to predict the missing word in the sentence. This project uses pre-trained `bert-base-uncased` as the prediction model. 
 
