@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'bert.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['ML_FITB_NAME'],
+        'NAME': os.environ['ML_FITB_DB'],
         'USER': os.environ['ML_FITB_USER'],
         'PASSWORD': os.environ['ML_FITB_PASSWORD'],
         'HOST': 'localhost',
