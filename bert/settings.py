@@ -26,7 +26,9 @@ SECRET_KEY = 'bs^x%vmb!3uudlocysi1%dpwb#eszdju#15fim(4tkmme2ozum'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['143.198.200.194',
+                 'ml-bert.marcreyes.xyz', 
+                 'ml-bert.digitalocean.marcreyes.xyz']
 
 
 # Application definition
