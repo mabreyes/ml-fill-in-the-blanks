@@ -4,3 +4,5 @@ torch
 numpy
 nltk
 django-crispy-forms
+gunicorn
+psycopg2
