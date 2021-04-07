@@ -3,7 +3,7 @@
 
 ML Fill-in-the-Blanks is a natural language processing (NLP) model that is trained to predict the missing word in the sentence. This project uses pre-trained `bert-base-uncased` as the prediction model. 
 
-Learn more about BERT [in this explainer](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270). and [A visual guide](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/) is also available for access.
+Learn more about BERT [in this explainer](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270). [A visual guide](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/) is also available for access.
 
 
 ## Details
