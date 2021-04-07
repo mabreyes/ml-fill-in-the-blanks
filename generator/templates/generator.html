@@ -66,6 +66,10 @@
             width: 100%;
         }
         
+        ul {
+            margin-bottom: 0;
+        }
+        
         .plus {
             border-radius: 1em !important;
         }
@@ -81,6 +85,14 @@
                 <p class="lead">This is a fill-in-the-blanks model that is trained to predict the missing word in the sentence. For the purpose of this demo we will be using pre-trained <code>bert-base-uncased</code> as our prediction model.</p>
                 <div class="label-predicted"><span>Predicted Words</span></div>
                 <div class="label-attention"><span>Attention Words</span></div>
+                <div class="alert alert-info">
+                    <ul>
+                        <li>Use ____ (4 underscores) to mark blank space in the text. <em>e.g. Marc is an ____ person</em></li>
+                        <li>Symbols (including period and comma) and special characters are not allowed.</li>
+                        <li>Only one word can be predicted at a time. Model will not work on multiple blank spaces.</li>
+                        <li>This model is limited, enter simple sentences if possible.</li>
+                    </ul>
+                </div>
                 <form action="" method="POST">
                     {% csrf_token %} {{ form|crispy }}
                     <input type="Submit" class="btn-lg btn-primary" name="submit" value="Submit">
