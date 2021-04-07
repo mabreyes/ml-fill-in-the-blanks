@@ -127,11 +127,19 @@
                     {% csrf_token %} {{ form|crispy }}
                     <input type="Submit" class="btn-lg btn-primary" name="submit" value="Submit">
                 </form>
-                {% if submit_button == "Submit" %} Completed sentence is:
-                <div class="alert alert-primary" role="alert">
+                {% if submit_button == "Submit" %} {% if status == "success" %} Completed sentence is:
+                <div class="alert alert-success" role="alert">
                     {{ generated_value | safe }}
                 </div>
-                {% endif %}
+                {% elif status == "error" %}
+                <div class="alert alert-danger" role="alert">
+                    {{ generated_value | safe }}
+                </div>
+                {% else %}
+                <div class="alert alert-danger" role="alert">
+                    An error occurred. Please try again.
+                </div>
+                {% endif %} {% endif %}
             </div>
 
         </div>
