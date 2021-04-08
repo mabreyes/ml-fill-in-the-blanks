@@ -28,7 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.0',
                  '128.199.176.16',
-                 'ml-bert.marcreyes.xyz']
+                 'ml-fill-in-the-blanks.marcreyes.xyz']
 
 
 # Application definition
