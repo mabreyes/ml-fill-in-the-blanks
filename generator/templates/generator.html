@@ -49,7 +49,7 @@
             border-radius: 1em !important;
         }
         
-        span {
+        .legend {
             margin-bottom: 1em;
         }
         
@@ -131,9 +131,11 @@
                         <li>This is deployed on a low-tier DigitalOcean droplet. If you're experiencing 50x errors, try on a simpler sentence or refresh your page to try again.</li>
                     </ul>
                 </div>
-                Legend:
-                <span class="predicted">Predicted Words</span>
-                <span class="attention">Attention Words</span>
+                <div class="legend">
+                    Legend:
+                    <span class="predicted">Predicted Words</span>
+                    <span class="attention">Attention Words</span>
+                </div>
                 <form action="" method="POST">
                     {% csrf_token %} {{ form|crispy }}
                     <input type="Submit" class="btn-lg btn-primary" name="submit" value="Submit">
