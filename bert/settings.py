@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['ML_FITB_SECRET_KEY']
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.0',
-                 '143.198.200.194',
+                 '128.199.176.16',
                  'ml-bert.marcreyes.xyz']
 
 
