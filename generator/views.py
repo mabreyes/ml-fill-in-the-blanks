@@ -12,6 +12,9 @@ model = BertForMaskedLM.from_pretrained(
     'bert-base-uncased', output_attentions=True)
 model.eval()
 
+def error_404(request, exception):
+    data = {}
+    return render(request, '404.html', data)
 
 def generate_missing(value):
     status = None
