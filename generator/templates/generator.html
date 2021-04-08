@@ -137,6 +137,11 @@
                         <li>This model is limited, enter simple sentences if possible.</li>
                     </ul>
                 </div>
+                <div class="alert alert-warning">
+                    <ul>
+                        <li>This is deployed an a low-tier DigitalOcean droplet. If you're experiencing 50x errors, try on a simpler sentence or refresh your page to try again.</li>
+                    </ul>
+                </div>
                 <form action="" method="POST">
                     {% csrf_token %} {{ form|crispy }}
                     <input type="Submit" class="btn-lg btn-primary" name="submit" value="Submit">
