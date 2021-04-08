@@ -62,11 +62,11 @@ def generate_missing(value):
 
         for f in focus:
             value = value.replace(
-                f, '<span class="attention">'+f+'</span>')
+                f, '<font color="blue">'+f+'</font>')
 
         status = "success"
 
-        return status, value.replace('____', '<span class="predicted"><strong>'+predicted_token+'</strong></span>')
+        return status, value.replace('____', '<font color="red"><strong>'+predicted_token+'</strong></font>')
 
     except:
         status = "error"
