@@ -6,3 +6,6 @@ nltk
 django-crispy-forms
 gunicorn
 psycopg2
+django-storages
+django-cleanup
+boto3
