@@ -158,7 +158,6 @@ Thumbs.db #thumbnail cache on Windows
 
 .ipynb_checkpoints/
 .env
-static/
 staticfiles/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
