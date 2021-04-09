@@ -19,7 +19,8 @@ from django.contrib import admin
 from django.urls import path
 from generator import views
 
-handler404 = 'generator.views.error_404'
+handler404 = 'generator.views.handler404'
+handler500 = 'generator.views.handler500'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

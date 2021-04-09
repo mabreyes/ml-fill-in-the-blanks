@@ -12,9 +12,11 @@ model = BertForMaskedLM.from_pretrained(
     'bert-base-uncased', output_attentions=True)
 model.eval()
 
-def error_404(request, exception):
-    data = {}
-    return render(request, '404.html', data)
+def handler404(request, exception):
+    return render(request, 'base/404.html', status=404)
+
+def handler500(request):
+    return render(request, 'base/500.html', status=500)
 
 def generate_missing(value):
     status = None
@@ -91,4 +93,4 @@ def base(request):
         'submit_button': submit_button
     }
 
-    return render(request, 'generator.html', context)
+    return render(request, 'generator/generator.html', context)
