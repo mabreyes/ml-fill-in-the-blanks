@@ -48,7 +48,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 DEFAULT_FILE_STORAGE = 'base.storage_backends.MediaStorage'
 
-AWS_LOCATION = 'static'
+AWS_LOCATION = 'static/ml_bert'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
